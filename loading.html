@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Page</title>
+</head>
+
+<body>
+    <div class="yukleniyor"></div>
+    <p aling="center">Loading</p>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222;
+        }
+        
+        p {
+            color: #fff;
+            font-size: 30px;
+            margin-left: -165;
+            z-index: 1000;
+        }
+        
+        .yukleniyor {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 20%;
+            background: linear-gradient(0deg, transparent, transparent 65%, #1dace1);
+            animation: yukle 5s linear infinite;
+        }
+        
+        .yukleniyor::before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            left: 2px;
+            bottom: 2px;
+            background: #222;
+            border-radius: 50%;
+            z-index: 999;
+        }
+        
+        .yukleniyor::after {
+            content: "";
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+            background: #222;
+            border-radius: 50%;
+            z-index: 999;
+            background: linear-gradient(0deg, transparent, transparent 65%, #1dace1);
+            z-index: 1;
+            filter: blur(25px);
+        }
+        
+        @keyframes yukle {
+            0% {
+                transform: rotate(0deg);
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                transform: rotate(1808deg);
+                filter: hue-rotate(3608);
+            }
+        }
+    </style>
+</body>
+
+</html>
